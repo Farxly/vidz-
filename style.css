@@ -1,0 +1,117 @@
+/* style.css */
+:root {
+  --bg: #1a1a2e;
+  --text: #fff;
+  --accent: #ff4d6d;
+  --secondary: #4facfe;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  max-width: 400px;
+  width: 90%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button.yes {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255,77,109,0.5);
+}
+
+button.yes:hover {
+  transform: scale(1.1);
+}
+
+button.no {
+  background: #444;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* Heart animation */
+.heart {
+  width: 100px;
+  height: 90px;
+  background: var(--accent);
+  position: relative;
+  margin: 0 auto 10px;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite ease-in-out;
+  filter: drop-shadow(0 8px 16px rgba(255,77,109,.4));
+}
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+.heart:after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes beat {
+  0%, 100% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.2); }
+}
+
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
